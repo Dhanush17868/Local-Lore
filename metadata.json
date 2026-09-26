@@ -1,0 +1,6 @@
+{
+  "name": "LocalLore",
+  "description": "An immersive digital museum and interactive documentary platform of Udupi's heritage, stories, culture, and culinary traditions, featuring an AI-powered travel itinerary designer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

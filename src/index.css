@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Brand Colors */
+  --color-brand-forest: #0d261b;
+  --color-brand-gold: #c5a85c;
+  --color-brand-ivory: #faf8f5;
+  --color-brand-charcoal: #1e1e1e;
+  --color-brand-sand: #e6dfd3;
+  --color-brand-terracotta: #c15c3d;
+  --color-brand-ocean: #1f4e5b;
+}
+
+/* Base resets & Cinematic style enhancements */
+html {
+  scroll-behavior: smooth;
+  background-color: #faf8f5;
+  color: #1e1e1e;
+  overflow-x: hidden;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5a85c;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d261b;
+}
+
+/* Ken Burns effect for serene backgrounds */
+@keyframes kenburns {
+  0% {
+    transform: scale(1.02) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-1%, 0.5%);
+  }
+  100% {
+    transform: scale(1.02) translate(0, 0);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 35s ease-in-out infinite;
+}
+
+/* Elegant custom fade in mask reveal */
+.text-reveal {
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%);
+  mask-size: 200% 100%;
+  animation: reveal-swipe 2s ease-out forwards;
+}
+
+@keyframes reveal-swipe {
+  0% { mask-position: 100% 0; }
+  100% { mask-position: 0% 0; }
+}
+
+/* Smooth custom ambient glow and sound wave visualizer */
+@keyframes soundwave {
+  0%, 100% { height: 4px; }
+  50% { height: 28px; }
+}
+
+.bar-1 { animation: soundwave 1.2s ease-in-out infinite; }
+.bar-2 { animation: soundwave 0.8s ease-in-out infinite 0.2s; }
+.bar-3 { animation: soundwave 1.4s ease-in-out infinite 0.1s; }
+.bar-4 { animation: soundwave 0.9s ease-in-out infinite 0.4s; }
+.bar-5 { animation: soundwave 1.1s ease-in-out infinite 0.3s; }
+
+/* Elegant custom ambient glow and keyframes for subtle hero visual depth */
+@keyframes ambient-glow {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.55; }
+}
+.animate-ambient-glow {
+  animation: ambient-glow 12s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+  50% { transform: scale(1.1) translate(2%, -1%); opacity: 0.5; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 15s ease-in-out infinite;
+}
+
+@keyframes pulse-slow-delay {
+  0%, 100% { transform: scale(1.05) translate(0, 0); opacity: 0.4; }
+  50% { transform: scale(0.95) translate(-1%, 2%); opacity: 0.2; }
+}
+.animate-pulse-slow-delay {
+  animation: pulse-slow-delay 18s ease-in-out infinite;
+}
+
+/* Elegant slow shimmer for curated experiences card placeholders */
+@keyframes placeholder-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-placeholder-shimmer {
+  animation: placeholder-shimmer 3s ease-in-out infinite;
+}
+
+/* Premium smooth transition utility for buttons, cards, and text hover effects */
+.premium-interactive {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Precise non-elastic hover lift and shadow for cards and buttons */
+.premium-lift {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -15px rgba(13, 38, 27, 0.1), 0 10px 20px -20px rgba(13, 38, 27, 0.05);
+}
+
+/* Very slow hover zoom for images */
+.premium-zoom-parent .premium-zoom-img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-zoom-parent:hover .premium-zoom-img {
+  transform: scale(1.03);
+}
+
+/* Scrollbar hides for horizontal carousel */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
